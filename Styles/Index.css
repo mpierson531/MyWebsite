@@ -1,0 +1,10 @@
+html {
+    background-color: rgb(245, 245, 245);
+    font-family: "Segoe UI", sans-serif;
+}
+
+#intro {
+    position: relative;
+    text-align: center;
+    top: 40vh;
+}

@@ -1,10 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Desktop Projects</title>
+    <link rel="stylesheet" type="text/css" href="/Styles/NavBar.css"/>
+    <link rel="stylesheet" type="text/css" href="/Styles/DesktopProjects.css"/>
 </head>
 <body>
-$END$
+<div id="navBar">
+
+</div>
+<div id="desktopProjects">
+    <span class="projectTitles" id="TextEditor">Text Editor</span>
+    <p>The first "bigger" project I made. It probably has my most time spent in a project.
+    I had originally made this in Java, but I ported it to C#/Windows Forms because of the speed of development.
+    I also just wanted to try WinForms. It will create files, save files, and open files. You can also change the font,
+    font size, and font decoration. It starts by creating a default directory for itself,
+    then you can also input a new directory that it will save to a json file for future reference.</p>
+    <div class="downloads">
+        Downloads:
+        <a href="Download%20Files/TextEditor_Setup1.msi">win-64 MSI Installer</a>
+        <a href="Download%20Files/Text Editor.exe">win-64 exe</a>
+        <a href="Download%20Files/Text Editor-self-contained.exe">win-64 self-contained exe</a>
+    </div>
+    <div class="underlineDiv"></div>
+
+    <span class="projectTitles" id="ConsoleNote">ConsoleNote</span>
+    <p>This project is a bit like a text editor, but in a console. With it, you can create, save and delete files.
+    Similar functionality to "Text Editor".</p>
+    <div class="downloads">
+        Downloads:
+        <a href="Download%20Files/ConsoleNote.exe">win-64 exe</a>
+        <a href="Download%20Files/ConsoleNote-self-contained.exe">win-64 self-contained exe</a>
+    </div>
+    <div class="underlineDiv"></div>
+
+    <span class="projectTitles" id="RedditDownloader">RedditDownloader</span>
+    <p>This is an app I made with the purpose of downloading images and videos from Reddit, from the commandline. I remember when I was making it,
+    I was having a really hard time getting the OAuth request to go through. Turns out I was missing a "?" in my request.</p>
+    <div class="underlineDiv"></div>
+
+    <span class="projectTitles" id="MyFirstPong">MyFirstPong</span>
+    <p class="MyFirstPongP">My most recent project, it is also my most ambitious and the one I am most proud of. It's a clone of Pong.
+    There's probably better clones out there, but I'd like to think of it as "Pong, but more modernized".
+    Inside the settings, you can change the variables most impactful on gameplay, including ball speed, ball angle,
+    as well as the speed of each individual paddle. There are color options for changing the color of the font,
+    along with the ball and paddles. You can also change the volume of the "pong" sound, as well as mute it. Hardware-accelerated.</p>
+
+    <p class="MyFirstPongP">I was very, very frustrated at certain points in making this. It took me a while to get the math for the collision detection working,
+    and then another while for the deflection of the ball. Probably around a week or so for each.
+    Those things took the longest as far as I remember. I had to make several more custom classes that inherited from
+    various classes within the game/OpenGL library I was using (libGDX). Most of them being shape and UI classes.
+    This project helped me learn a lot.</p>
+    <div class="downloads" id="lastDownloadsDiv">
+        Downloads:
+        <a href="Download Files/MyFirstPong.jar">jar</a>
+        <a href="Download Files/MyFirstPong.zip">win-64 self-contained</a>
+    </div>
+</div>
 </body>
+<script src="/Scripts/NavBar.js"></script>
 </html>

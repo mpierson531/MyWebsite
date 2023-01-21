@@ -1,0 +1,67 @@
+#navBar {
+    position: fixed;
+    z-index: 1;
+    top: 0.1vh;
+}
+
+#desktopDropdown {
+    display: inline-block;
+    position: relative;
+}
+
+#webDropdown {
+    display: inline-block;
+    position: relative;
+}
+
+#desktopContent {
+    display: none;
+    position: absolute;
+    background-color: rgb(215, 215, 240)
+}
+
+#desktopContent a {
+    display: block;
+    color: black;
+    text-decoration: none;
+}
+
+#desktopContent a:hover {
+    background-color: rgb(200, 200, 205);
+}
+
+#webContent {
+    display: none;
+    position: absolute;
+    background-color: rgb(215, 215, 240)
+}
+
+#webContent a {
+    display: block;
+    color: black;
+    text-decoration: none;
+}
+
+#webContent a:hover {
+    background-color: rgb(200, 200, 205);
+}
+
+.navBarButtons {
+    height: 2.5rem;
+    background-color: rgb(40, 175, 125);
+    color: white;
+}
+
+.navBarButtons:hover {
+    color: rgb(230, 230, 230);
+}
+
+.navBarButtons:active {
+    background-color: rgb(15, 165, 110);
+}
+
+#desktopDropdown:hover #desktopContent { display: block; }
+
+#webDropdown:hover #webContent {
+    display: block;
+}
