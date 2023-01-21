@@ -30,14 +30,6 @@ html {
     height: 100%;
 }
 
-/*.prev {
-    right: 15%
-}
-
-.next {
-    left: 15%
-}*/
-
 .prev, .next {
     cursor: pointer;
     position: absolute;
@@ -59,6 +51,15 @@ html {
 
 .prev:hover, .next:hover {
     background-color: rgba(0, 0, 0, 0.8);
+    scale: 1.03;
+}
+
+.prev:hover {
+    translate: 0.125vw 0
+}
+
+.next:hover {
+    translate: -0.125vw 0
 }
 
 .numberText {
@@ -73,8 +74,8 @@ html {
     display: flex;
     justify-content: space-between;
     background-color: #212122;
-    border: 4px #212122 solid;
-    border-radius: 3px;
+    border: 3px #212122 solid;
+    border-radius: 4px;
     width: 100%;
 }
 
@@ -98,11 +99,13 @@ html {
 .thumbnail {
     opacity: 0.6;
     cursor: pointer;
-    border: 2px white solid
+    border: 2px white solid;
+    border-radius: 4px
 }
 
 .active, .thumbnail:hover {
-    opacity: 1
+    opacity: 1;
+    scale: 1.03
 }
 
 .imageSlide {
