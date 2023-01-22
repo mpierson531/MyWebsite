@@ -1,6 +1,7 @@
 html {
     background-color: rgb(245, 245, 245);
     font-family: "Segoe UI", sans-serif;
+    font-size: 17px;
 }
 
 p {
@@ -55,5 +56,5 @@ p:not(.MyFirstPongP) {
 .underlineDiv {
     border-bottom: black 2px solid;
     margin-top: 0.5rem;
-    margin-bottom: 1.7rem;
+    margin-bottom: 6%;
 }
