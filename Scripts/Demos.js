@@ -54,29 +54,6 @@ window.addEventListener("load", function(event) {
     for (let i = 0; i < videos.length; i++) {
         videos[i].controls = true
     }
-
-    let prev = document.getElementsByClassName("prev")
-    let next = document.getElementsByClassName("next")
-
-    for (let i = 0; i < prev.length; i++) {
-        let rect = prev[i].getBoundingClientRect()
-        let position = { x: rect.x, y: rect.y }
-        let animation = [
-            { width: `${rect.width - ((window.innerWidth * 0.5 / 25))}px` }
-        ]
-
-        console.log(window.innerWidth)
-
-        let newWidth = (rect.width - window.innerWidth * 0.5 / 25) + "px"
-
-        prev[i].addEventListener("mousedown", function() {
-            prev[i].style.width = newWidth
-        })
-
-        next[i].addEventListener("mousedown", function() {
-            next[i].style.width = newWidth
-        })
-    }
 })
 
 function nextSlide(container, i) {
