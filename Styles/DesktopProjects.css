@@ -39,12 +39,12 @@ p:not(.MyFirstPongP) {
 }
 
 #desktopProjects {
-    position: absolute;
-    display: inline-block;
-    left: 20rem;
+    display: block;
     top: 9rem;
-    width: 45vw;
+    width: 50%;
     margin-top: 0;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .projectTitles {
