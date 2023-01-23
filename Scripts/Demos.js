@@ -27,6 +27,38 @@ window.addEventListener("load", function(event) {
     showSlides()
 
     for (let i = 0; i < containers.length; i++) {
+        let containerImages = containers[i].getElementsByTagName("img")
+        let videos = containers[i].getElementsByTagName("video")
+
+        let secondVideoIterator = 0
+        for (let j = 0; j < videos.length; j++) {
+            if (videos[j].className.includes("thumbnail")) {
+                let videoTitle = `${containers[i].id} video ${secondVideoIterator + 1} thumbnail`
+                videos[j].setAttribute("preload", "metadata")
+                videos[j].setAttribute("title", videoTitle)
+                secondVideoIterator++
+                continue
+            }
+
+            let videoAlt = `${containers[i].id} video ${j + 1}`
+            videos[j].setAttribute("preload", "metadata")
+            videos[j].setAttribute("title", videoAlt)
+        }
+
+        let secondImageIterator = 0
+        for (let j = 0; j < containerImages.length; j++) {
+            if (containerImages[j].className === "thumbnail") {
+                let alt = `${containers[i].id} image ${secondImageIterator + 1}`
+                containerImages[j].setAttribute("alt", alt)
+                containerImages[j].setAttribute("title", alt)
+                secondImageIterator++
+                continue
+            }
+
+            let alt = `${containers[i].id} image ${j + 1}`
+            containerImages[j].setAttribute("alt", alt)
+        }
+
         let containerRows = containers[i].getElementsByClassName("row")
         let containerIndex = i + 1
 
