@@ -51,7 +51,6 @@ html {
 }
 
 .prev:hover, .next:hover {
-    background-color: rgba(0, 0, 0, 0.8);
     scale: 1.05 1;
 }
 
@@ -61,28 +60,6 @@ html {
 
 .next:hover {
     translate: -0.25vw 0
-}
-
-.prev:active {
-    animation-name: prevSlide;
-    animation-duration: 0.075s;
-    animation-timing-function: linear;
-    animation-delay: 0s;
-    animation-iteration-count: 1;
-    animation-direction: normal;
-    animation-fill-mode: forwards;
-    animation-play-state: running;
-}
-
-.next:active {
-    animation-name: nextSlide;
-    animation-duration: 0.075s;
-    animation-timing-function: linear;
-    animation-delay: 0s;
-    animation-iteration-count: 1;
-    animation-direction: normal;
-    animation-fill-mode: forwards;
-    animation-play-state: running;
 }
 
 .numberText {
@@ -138,29 +115,4 @@ html {
     width: 100%;
     height: 100%;
     border: 2px white solid
-}
-
-@keyframes prevSlide {
-    50% {
-        scale: 0.9 1;
-        translate: 0.1% 0
-    }
-
-    100% {
-        scale: 1;
-        translate: 0;
-    }
-}
-
-@keyframes nextSlide {
-
-    50% {
-        scale: 0.9 1;
-        translate: 0.1% 0
-    }
-
-    100% {
-        scale: 1;
-        translate: 0;
-    }
 }

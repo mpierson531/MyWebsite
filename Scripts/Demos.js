@@ -54,6 +54,8 @@ window.addEventListener("load", function(event) {
     for (let i = 0; i < videos.length; i++) {
         videos[i].controls = true
     }
+
+    stylePrevAndNext()
 })
 
 function nextSlide(container, i) {
@@ -89,6 +91,7 @@ function showSlides() {
 
     for (let i = 0; i < allSlidesThumbnails.length; i++) {
         let slides = allSlidesThumbnails[i][0]
+
         for (let j = 0; j < slides.length; j++) {
             slides[j].style.display = "none"
         }
@@ -112,6 +115,31 @@ function showSlides() {
 
     pongSlidesThumbnails[0][pongSlideIndex - 1].style.display = "block"
     pongSlidesThumbnails[1][pongSlideIndex - 1].className += " active"
+
+    let prevsNexts = []
+    let containers = document.getElementsByClassName("container")
+
+    for (let i = 0; i < containers.length; i++) {
+        let prev = containers[i].getElementsByClassName("prev")[0]
+        let next = containers[i].getElementsByClassName("next")[0]
+        prevsNexts.push([prev, next])
+    }
+
+    let rect = textSlidesThumbnails[0][textSlideIndex - 1].getBoundingClientRect()
+    prevsNexts[0][0].style.top = rect.height / 2 + "px"
+    prevsNexts[0][1].style.top = rect.height / 2 + "px"
+
+    rect = consoleSlidesThumbnails[0][consoleSlideIndex - 1].getBoundingClientRect()
+    prevsNexts[1][0].style.top = rect.height / 2 + "px"
+    prevsNexts[1][1].style.top = rect.height / 2 + "px"
+
+    rect = redditSlidesThumbnails[0][redditSlideIndex - 1].getBoundingClientRect()
+    prevsNexts[2][0].style.top = rect.height / 2 + "px"
+    prevsNexts[2][1].style.top = rect.height / 2 + "px"
+
+    rect = pongSlidesThumbnails[0][pongSlideIndex - 1].getBoundingClientRect()
+    prevsNexts[3][0].style.top = rect.height / 2 + "px"
+    prevsNexts[3][1].style.top = rect.height / 2 + "px"
 }
 
 function checkIndices() {
@@ -208,28 +236,63 @@ function getSlidesAndThumbnails() {
     return allSlidesAndThumbnails
 }
 
-/*function getStringMetrics(stringToMeasure, font, fontSize) {
-    let canvas = document.createElement("canvas")
-    canvas.style.display = "none"
-    canvas.style.font = font
-    canvas.style.fontSize = fontSize
-    let metrics = canvas.getContext("2d").measureText(stringToMeasure)
-    canvas.remove()
-    return metrics
-}*/
+function stylePrevAndNext() {
+    let prev = document.getElementsByClassName("prev")
+    let next = document.getElementsByClassName("next")
+    prev[0].style.color = "black"
+    next[0].style.color = "black"
 
+    let prevNextWidth = prev[0].getBoundingClientRect().width
 
-/*
-let slideshows = containers[i].getElementsByClassName("slideshow")
+    let prevAnimation = []
+    let nextAnimation = []
 
-for (let j = 0; j < slideshows.length; j++) {
-    if (slideshows[i].children[1].className !== "videoSlide") {
-        let image = slideshows[i].children[1]
-        let rect = image.getBoundingClientRect()
+    let j = 16
+    for (let i = 16; i > 5; i--) {
+        prevAnimation.push({
+            paddingLeft: `${i.toString()}px`,
+            paddingRight: `${j.toString()}px`,
+            width: `${prevNextWidth}px`
+        })
 
-        largestWidth = (rect.width > largestWidth) ? rect.width : largestWidth
-        largestHeight = (rect.height > largestHeight) ? rect.height : largestHeight
-
-        images.push(image)
+        j++
     }
-}*/
+
+    for (let i = 6; i < 17; i++) {
+        prevAnimation.push({
+            paddingLeft: `${i.toString()}px`,
+            paddingRight: `${j.toString()}px`,
+            width: `${prevNextWidth}px`
+        })
+
+        j--
+    }
+
+    for (let i = 16; i > 5; i--) {
+        nextAnimation.push({
+            paddingLeft: `${j.toString()}px`,
+            paddingRight: `${i.toString()}px`,
+            width: `${prevNextWidth}px`
+        })
+        j++
+    }
+
+    for (let i = 6; i < 17; i++) {
+        nextAnimation.push({
+            paddingLeft: `${j.toString()}px`,
+            paddingRight: `${i.toString()}px`,
+            width: `${prevNextWidth}px`
+        })
+        j--
+    }
+
+    for (let i = 0; i < prev.length; i++) {
+        prev[i].addEventListener("click", function prevSlide() {
+            prev[i].animate(prevAnimation, 250)
+        })
+
+        next[i].addEventListener("click", function nextSlide() {
+            next[i].animate(nextAnimation, 250)
+        })
+    }
+}
