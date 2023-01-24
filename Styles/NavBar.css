@@ -1,7 +1,7 @@
 #navBar {
     position: fixed;
     z-index: 1;
-    top: 0.1vh;
+    top: 0.1vh
 }
 
 #navBar a:hover {
