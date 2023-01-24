@@ -35,11 +35,7 @@ p:not(.MyFirstPongP) {
     display: inline-block;
 }
 
-.downloads a:hover {
-    background-color: rgba(0, 0, 255, 0.3);
-}
-
-.downloads :active {
+.downloads:active {
     color: red;
 }
 

@@ -8,6 +8,10 @@ html {
     font-size: 17px;
 }
 
+button:hover {
+    scale: 1.03;
+}
+
 .projectTitle {
     font-weight: 500;
     margin-bottom: 2%;

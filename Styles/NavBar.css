@@ -4,6 +4,11 @@
     top: 0.1vh;
 }
 
+#navBar a:hover {
+    font-size: 18px;
+    background-color: rgb(200, 200, 205);
+}
+
 #desktopDropdown {
     display: inline-block;
     position: relative;
@@ -26,10 +31,6 @@
     text-decoration: none;
 }
 
-#desktopContent a:hover {
-    background-color: rgb(200, 200, 205);
-}
-
 #webContent {
     display: none;
     position: absolute;
@@ -42,18 +43,11 @@
     text-decoration: none;
 }
 
-#webContent a:hover {
-    background-color: rgb(200, 200, 205);
-}
-
 .navBarButtons {
     height: 2.5rem;
     background-color: rgb(40, 175, 125);
-    color: white;
-}
-
-.navBarButtons:hover {
-    color: rgb(230, 230, 230);
+    color: rgba(255, 255, 255, 0.8);
+    border-radius: 2px;
 }
 
 .navBarButtons:active {

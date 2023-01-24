@@ -1,4 +1,4 @@
-let navBar = document.getElementById("navBar")
+let navBar
 let desktopButton
 let webButton
 let homeBtn
@@ -8,6 +8,7 @@ let webRect
 let homeRect
 
 window.addEventListener("load", async () => {
+    navBar = document.getElementById("navBar")
     navBar.innerHTML = await loadNavBar()
 
     desktopButton = document.getElementById("desktopButton")
@@ -37,6 +38,44 @@ window.addEventListener("load", async () => {
 
     demosButton.onclick = function() {
         window.location.href = "./Demos.html"
+    }
+
+    let buttons = navBar.getElementsByTagName("button")
+    for (let i = 0; i < buttons.length; i++) {
+        let color = buttons[i].style.color
+
+        buttons[i].addEventListener("mouseover", function() {
+            buttons[i].style.color = "white"
+            buttons[i].style.scale = "1.02"
+        })
+
+        buttons[i].addEventListener("mouseleave", function() {
+            buttons[i].style.color = color
+            buttons[i].style.scale = "1"
+        })
+    }
+
+    let divs = navBar.getElementsByTagName("div")
+
+    for (let i = 0; i < divs.length; i++) {
+        if (divs[i].id.includes("Content")) {
+            let content = divs[i]
+            let a = content.getElementsByTagName("a")
+            let button = content.previousElementSibling
+            let buttonColor = button.style.color
+
+            for (let j = 0; j < a.length; j++) {
+                a[j].addEventListener("mouseover", function() {
+                    button.style.color = "white"
+                    button.style.scale = "1.02"
+                })
+
+                a[j].addEventListener("mouseleave", function() {
+                    button.style.color = buttonColor
+                    button.style.scale = "1"
+                })
+            }
+        }
     }
 })
 

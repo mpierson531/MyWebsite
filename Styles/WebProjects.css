@@ -4,6 +4,10 @@ html {
     font-size: 17px;
 }
 
+button:hover {
+    scale: 1.03;
+}
+
 p {
     margin-top: 0;
 }
